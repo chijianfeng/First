@@ -1,0 +1,86 @@
+<ScrollView 
+     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+
+    <TextView android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="文件ACL部分"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/uploadFile"
+        android:text="上传文件"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/downloadFile"
+        android:text="下载文件"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/deleteFile"
+        android:text="删除文件"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/listFile"
+        android:text="获取文件列表"/>
+    
+     <TextView android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="数据ACL部分"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/insertData"
+        android:text="插入数据"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/updateData"
+        android:text="更新数据"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/deleteData"
+        android:text="删除数据"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/findData"
+        android:text="查询数据"/>
+    
+     <TextView android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="角色ACL部分"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/createRole"
+        android:text="创建role"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/findRole"
+        android:text="查询role"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/delRole"
+        android:text="删除role"/>
+    
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info"/>
+    
+    <TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info1"/>
+	<TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info2"/>
+	<TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info3"/>
+	<TextView android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/info4"/>
+    
+</LinearLayout>
+</ScrollView>

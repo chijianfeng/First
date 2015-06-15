@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/btn_excep"
+        android:text="异常日志"/>
+    <Button android:id="@+id/btn_event"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:text="事件日志"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/btn_event_duration"
+        android:text="事件持续时间"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/btn_event_start"
+        android:text="事件开始"/>
+    <Button android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:id="@+id/btn_event_end"
+        android:text="事件结束"/>
+</LinearLayout>

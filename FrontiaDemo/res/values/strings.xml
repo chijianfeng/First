@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FrontiaDemo</string>
+    <string name="menu_settings">Settings</string>
+    <string name="auth">第三方账号登录demo</string>
+    <string name="appdata">应用数据存储demo</string>
+    <string name="appfile">应用文件存储demo</string>
+    <string name="personalfile">个人文件存储demo</string>
+    <string name="push">推送demo</string>
+    <string name="stat">统计demo</string>
+    <string name="account">角色和用户管理demo</string>
+    <string name="acl">acl demo</string>
+    <string name="deeplink">deep link demo</string>
+    <string name="lbs">lbs demo</string>
+	<string name="show">显示菜单</string>
+	<string name="share">分享 demo</string>
+</resources>

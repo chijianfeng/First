@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:orientation="vertical" >
+            <Button
+                android:id="@+id/authBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/auth" />
+
+            <Button
+                android:id="@+id/appDataBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/appdata" />
+
+            <Button
+                android:id="@+id/appFileBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/appfile" />
+
+            <Button
+                android:id="@+id/personalFileBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/personalfile" />
+
+            <Button
+                android:id="@+id/pushBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/push" />
+
+            <Button
+                android:id="@+id/statBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/stat" />
+
+            <Button
+                android:id="@+id/accountBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/account" />
+
+            <Button
+                android:id="@+id/acl"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/acl" />
+
+            <Button
+                android:id="@+id/lbsBtn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lbs" />
+            
+            <Button android:id="@+id/shareBtn"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent" 
+                android:text="@string/share"/>       
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

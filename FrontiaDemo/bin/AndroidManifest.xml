@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.baidu.frontia.demo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <!-- Frontia框架的公共权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+
+    <!-- FrontiaPush 和FrontiaStatistics 需要的权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"></uses-permission>
+
+    <!-- FrontiaPush 需要的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- 可选的权限 -->
+    <!-- 使用GPS获取用户精确定位信息 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+
+    <!-- 需要声明FrontiaApplication。如果开发者有自己的Application，可继承FrontiaApplication，然后再声明自己的Application -->
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:name="com.baidu.frontia.FrontiaApplication"
+		>
+        <activity
+            android:name="com.baidu.frontia.demo.FrontiaActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- push service client -->
+        <receiver android:name="com.baidu.frontia.demo.push.PushActivity$PushMessageReceiver">
+            <intent-filter>
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <!-- 接收bind,unbind,fetch,delete等反馈消息 -->
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+        
+        <!-- push service -->
+        <receiver android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+                <action android:name="com.baidu.android.pushservice.action.frontia.user" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package" />
+            </intent-filter>                   
+        </receiver>
+        
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1" />
+        
+        <activity android:name=".statistics.DemoActivity1" android:launchMode="singleInstance"
+                  android:label="统计demo">
+        </activity>
+        <activity android:name=".statistics.DemoActivity2"
+                  android:label="activity2" android:launchMode="singleInstance" />
+        <activity android:name=".statistics.DemoActivity3"
+                  android:label="activity3" android:launchMode="singleInstance" />
+        <activity android:name=".statistics.DemoDialogActivity" android:label="DemoDialogActivity"
+                  android:theme="@android:style/Theme.Dialog"  android:launchMode="singleInstance" />
+
+        <activity android:name=".statistics.supportv4fragment.MainFragmentActivity"
+                  android:label="fragmentActivity" android:launchMode="singleInstance" />
+
+        <activity android:name=".statistics.appfragment.AppFragmentDemoActivity"
+                  android:label="fragmentActivity" android:launchMode="singleInstance" />
+		<activity android:name="com.baidu.frontia.demo.push.PushActivity"></activity>
+		<activity android:name="com.baidu.frontia.demo.social.SocialActivity"></activity>
+		<activity android:name="com.baidu.frontia.demo.storage.AppDataActivity"></activity>
+		<activity android:name="com.baidu.frontia.demo.storage.AppFileActivity"></activity>
+		<activity android:name="com.baidu.frontia.demo.storage.PersonalFileActivity"></activity>
+		<activity android:name="com.baidu.frontia.demo.role.AccountActivity"></activity>
+    	<activity android:name="com.baidu.frontia.demo.acl.ACLActivity"></activity>
+    	<activity android:name="com.baidu.frontia.demo.lbs.LBSActivity"></activity>   
+    	<activity android:name="com.baidu.frontia.demo.share.ShareActivity"
+    	    android:launchMode="singleTask"></activity>
+        <activity
+            android:name="com.baidu.frontia.activity.share.FrontiaSocialOAuthActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity
+	            android:name="com.baidu.frontia.activity.share.FrontiaLocalShareActivity"
+	            android:configChanges="orientation|keyboardHidden"
+	            android:launchMode="singleTask">
+	    </activity>
+        <activity
+            android:name="com.baidu.frontia.activity.share.FrontiaQQFriendShareReceiverActivity"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100358052" />
+            </intent-filter>
+        </activity>
+
+        <!-- 用户微信回调的 activity -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" >
+        </activity>
+
+    	</application>
+
+</manifest>
